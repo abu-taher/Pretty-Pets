@@ -1,0 +1,825 @@
+/*-------------------١--------------------------*/
+/*                  ملحوظات                     */
+/*
+ملحوظة عامة:لقد  تركت لكم تعليقات لتساعدك علي تنظيم الملف بالشكل المثالي
+تأكد من أن آخر جزء هو الجزء الحاوي لكل ما هو متعلق بشكل الصفحة على الهواتف والتابلت
+إذا كان لديك أي سؤال من فضلك إرسل لي الكود وشرح المشكلة علي البريد الالكتروني
+tony@barmej.com
+*/
+/*----------------------------------------------*/
+
+/*----------------------١-----------------------*/
+/*
+Fonts & Font-faces سنقوم بوضع جميع الخطوط التي سنحتاجها هنا
+ملحوظة: إسم الخط هو إما
+Avenir Next 
+أو إن لم تجده فيمكنك استعمال خط 
+Lato
+*/
+/*---------------------------------------------*/
+
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../fonts/AvenirNext-Regular.woff") format("woff"),
+    url("../fonts/AvenirNext-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../fonts/AvenirNext-Medium.woff") format("woff"),
+    url("../fonts/AvenirNext-Medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../fonts/AvenirNext-Bold.woff") format("woff"),
+    url("../fonts/AvenirNext-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*----------------------٢-----------------------*/
+/*                  DEFAULTS                    */
+/*
+يجب عليك هنا وضع أي من الأنماط العامة الخاصة بوسوم مثل
+html, body, h1, h2, p 
+وهي الأنماط التي تنطبق على الموقع بشكل عام وكل صفحاته وليس على عنصر معين في صفحة معينة
+*/
+/*----------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "AvenirNext", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  color: #2B292D;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  line-height: 33px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+/*----------------------٣-----------------------*/
+/*               HELPER CLASSES                 */
+/*
+يجب عليك هنا وضع أي من الأنماط الخاصة بال
+classes
+التي ستقوم بإعادة إستخدامها في أكثر من مكان خلال عملك على الموقع 
+على سبيل المثال: النمط الخاص بالزر الأزرق الذي يستعمله المصمم في كل الصفحات تقريباً
+*/
+/*----------------------------------------------*/
+
+.button {
+  text-decoration: none;
+  border-radius: 41px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 17px 58px;
+  text-transform: capitalize;
+}
+
+.button.is-primary {
+  background-color: #3040c4;
+  color: white;
+  border:  1px solid #3040c4;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.is-primary:hover {
+  background-color: white;
+  color: #3040c4;
+  border: 1px solid #3040c4;
+}
+
+.button.is-secondary {
+  background-color: white;
+  color: #3040c4;
+  border:  1px solid white;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.is-secondary:hover {
+  background-color: #3040c4;
+  color: white;
+  border: 1px solid white;
+}
+
+.button.is-outline {
+  color: white;
+  border: 1px solid white;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.is-outline:hover {
+  background-color: white;
+  color: #3040c4;
+  border: 1px solid #3040c4;
+}
+
+.heading-paragraph {
+  font-size: 14px;
+  line-height: 19px;
+  color: #5f5f80;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/*----------------------٤-----------------------*/
+/*                    LAYOUT                    */
+/*                البناء العام للصفحة           */
+/*----------------------------------------------*/
+
+.container {
+  margin: 0 auto;
+  padding: 22px 0;
+}
+
+/*----------------------٥-----------------------*/
+/*                    HEADER                    */
+/*----------------------------------------------*/
+
+.logo {
+  text-decoration: none;
+}
+
+.logo img {
+  width: 89px;
+}
+
+header .container {
+  border-bottom: 1px solid #eef0fc;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.is-visible-mobile {
+  display: none;
+}
+
+.burger {
+  position: relative;
+  padding-left: 1.25em;
+}
+
+.burger:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* top: 1.25em; */
+  top: 0;
+  width: 1em;
+  height: 0.15em;
+  background: black;
+  box-shadow: 0 0.35em 0 0 black, 0 0.7em 0 0 black;
+}
+
+/*----------------------٦-----------------------*/
+/*                     HERO                     */
+/*----------------------------------------------*/
+
+.hero .container {
+  padding-bottom: 0;
+}
+
+.hero__desc {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.hero__desc h1 {
+  margin-top: 29px;
+}
+
+.hero__desc p {
+  line-height: 26px;
+  margin-bottom: 5%;
+}
+
+.hero__desc .button.is-primary {
+  margin-top: 28px;
+  padding: 20px 58px;
+}
+
+.hero__image {
+  max-width: 100%;
+}
+
+.hero__image img {
+  width: 100%;
+}
+
+/*----------------------٧-----------------------*/
+/*              MEET YOUR MATCH                 */
+/*----------------------------------------------*/
+
+.meetYourMatch .container {
+  padding-top: 0;
+}
+
+.meetYourMatch__background {
+  background-color: #eef0fc;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  height: 454px;
+  margin-top: -3px;
+}
+
+.meetYourMatchــcontent {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: -400px;
+}
+
+.meetYourMatchــform {
+  text-align: center;
+  margin-bottom: 47px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switcher span {
+  margin: 0 16px;
+  font-size: 14px;
+  color: #9fa2b8;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-top: 34px;
+  position: relative;
+}
+
+.form-group input::placeholder {
+  color: rgba(48, 64, 196, 0.5);
+  font-weight: 300;
+}
+
+.form-group input {
+  background: url("../images/map-pin.png") no-repeat 13px;
+  background-color: white;
+  border: 1px solid #3040c4;
+  border-radius: 41px;
+  font-size: 16px;
+  color: rgba(48, 64, 196, 0.5);
+  text-transform: capitalize;
+  padding: 18px 44px;
+  width: 100%;
+}
+
+.form-group .button.is-primary {
+  padding: 18px 32px;
+  margin-left: -10%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-color: #3040c4;
+}
+
+.is-searchResults .widget {
+  box-shadow: 0px 76px 172px rgba(205, 213, 228, 0.3);
+  margin-bottom: 24px;
+}
+
+.is-searchResults .widget .widget__image img {
+  width: 100%;
+}
+
+.widget__desc {
+  padding: 16px;
+}
+
+.widget__desc p {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+/*----------------------٨-----------------------*/
+/*               HOW IT WORKS                   */
+/*----------------------------------------------*/
+
+.howItWorks {
+  text-align: center;
+}
+
+.howItWorks .widget {
+  margin-top: 58px;
+}
+
+.is-howItWorks .widget .widget__image img {
+  width: 75%;
+}
+
+.howItWorks .widget__desc h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  margin: 8px;
+}
+
+.howItWorks .widget__desc p {
+  color: #6a6c79;
+}
+/*----------------------٩-----------------------*/
+/*                 STORIES                      */
+/*----------------------------------------------*/
+
+.stories {
+  background-color: #f6f6f9;
+  padding-top: 40px;
+}
+
+.stories .widgets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.stories .widget {
+  width: 90%;
+  margin-top: 56px;
+}
+
+.stories .widget .widget__desc {
+  padding: 16px 0;
+}
+
+.stories .widget .widget__desc h3 {
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 2px;
+}
+
+.stories .widget .widget__desc .link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2329db;
+}
+
+.stories .widget img {
+  width: 100%;
+}
+
+/*----------------------١٠----------------------*/
+/*       Actions: Change A Life, Adopt A Pet    */
+/*----------------------------------------------*/
+
+.actions {
+  background-color: #3040c4;
+  color: white;
+  text-align: center;
+  padding: 59px 0;
+}
+
+.actions h2 {
+  /* padding: 59px 0; */
+  padding-bottom: 28px;
+  text-transform: capitalize;
+}
+
+.actions .button {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+/*---------------------١١-----------------------*/
+/*                    FOOTER                    */
+/*----------------------------------------------*/
+
+footer {
+  padding: 0 5%;
+}
+
+footer .copyrights {
+  padding: 58px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+}
+
+.copyrights p,
+footer a {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.copyrights img {
+  margin-bottom: 15px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-nav .item {
+  flex-grow: 1;
+  flex-basis: 50%;
+  margin-bottom: 26px;
+}
+
+.footer-nav .item li {
+  padding-bottom: 16px;
+}
+
+.footer-nav .item li a {
+  line-height: 19px;
+  text-transform: capitalize;
+}
+
+/*----------------------١٢----------------------*/
+/*                    Responsive                */
+/*       كل ما هو متعلق بالهواتف والتابلت       */
+/*----------------------------------------------*/
+
+@media (max-width: 634px) {
+  .main-nav {
+    display: none;
+  }
+
+  .is-visible-mobile {
+    display: block;
+    background: none;
+    border: none;
+  }
+}
+
+@media (min-width: 635px) {
+
+  h2 {
+    font-size: 36px;
+    line-height: 49px;
+    color: #2B292D;
+  }
+
+  h5 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .logo img {
+    margin-top: 29px;
+    width: 115px;
+  }
+
+  /* header .container {
+    border: none;
+  } */
+
+  .main-nav ul {
+    display: flex;
+  }
+
+  .main-nav ul li {
+    margin: 36px 0 36px 36px;
+  }
+
+  .main-nav ul li a {
+    text-decoration: none;
+    color: #191B43;
+    font-size: 18px;
+  }
+
+  .hero .container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .hero__desc p {
+    margin: 24px 0;
+  }
+
+  .hero__desc .button.is-primary {
+    margin-top: 0;
+    margin-bottom: 85px;
+    padding: 17px 52px;
+  }
+
+  .meetYourMatch .container {
+    width: 90%;
+  }
+
+  .meetYourMatch__background{
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .meetYourMatchــform {
+    margin-top: 36px;
+  }
+
+  .form-group .button.is-primary {
+    width: 161px;
+  }
+
+  .is-searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .howItWorks {
+    margin-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .howItWorks .widget {
+    margin-top: 70px;
+  }
+
+  .is-howItWorks {
+    width: 50%;
+    margin: auto;
+  }
+
+  .howItWorks .widget__desc h3 {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  .widget__desc p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .stories {
+    padding: 104px 0;
+  }
+
+  .stories .container {
+    width: 90%;
+  }
+
+  .heading-paragraph {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .stories .widgets {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .stories .widget {
+    margin-top: 36px;
+  }
+
+  .stories .widget {
+    width: 45%;
+  }
+
+  .stories .widget .widget__desc {
+    padding: 18px 0;
+  }
+
+  .stories .widget .widget__desc h3 {
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 7px;
+  }
+
+  .actions h2 {
+    color: white;
+    font-size: 29px;
+  }
+
+  .button.is-outline {
+    margin-left: 24px;
+  }
+
+  .copyrights p,
+  footer a {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  
+  footer {
+    padding: 0;
+  }
+
+  footer .container {
+    width: 90%;
+    margin-top: 114px;
+  }
+
+  footer .copyrights {
+    padding: 0;
+    float: left;
+    width: 18%;
+  }
+
+  footer .footer-nav {
+    padding-left: 65px;
+    flex-wrap: nowrap;
+  }
+
+}
+
+@media (min-width: 852px) {
+  .is-searchResults .widget {
+    flex-basis: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  h1 {
+    font-size: 48px;
+    line-height: 66px;
+  }
+
+  h5 {
+    font-size: 14px;
+    line-height: 19px;
+  }
+ 
+  header .container {
+    border-bottom: 1px solid #eef0fc;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .hero__desc {
+    margin-top: 146px;
+    flex-grow: 1;
+    flex-basis: 40%;
+  }
+
+  .hero__desc p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 29px 0;
+  }
+
+  .hero__desc .button.is-primary {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+  }
+
+  .hero__image {
+    flex-grow: 1;
+    flex-basis: 60%;
+  }
+
+  .meetYourMatchــcontent {
+    padding-top: 55px;
+  }
+
+  .form-group {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-group input {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .form-group .button.is-primary {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    width: 185px;
+  }
+
+  .is-searchResults .widget {
+    flex-basis: 22.5%;
+  }
+
+  .meetYourMatch__background {
+    height: 512px;  
+  }
+
+  .meetYourMatchــcontent {
+    padding-top: 0;
+  }
+
+  .widget__desc {
+    padding: 18px;
+  }
+
+  .widget__desc p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .howItWorks {
+    margin-top: 144px;
+    margin-bottom: 144px;
+  }
+
+  .is-howItWorks {
+    width: 90%;
+    display: flex;
+  }
+
+  .is-howItWorks .widget .widget__image img {
+    width: 168px;
+  }
+
+  .stories {
+    padding: 95px 0;
+  }
+
+  .stories .widgets {
+    flex-wrap: nowrap;
+    margin-top: 48px;
+  }
+
+  .stories .widget {
+    flex-basis: 30%;
+    margin-top: 0;
+  }
+
+  .heading-paragraph {
+    font-size: 18px;
+  }
+
+  .actions {
+    padding: 116px 0;
+  }
+
+  .actions h2 {
+    font-size: 36px;
+    line-height: 49px;
+  }
+
+  .actions .button {
+    width: 223px;
+  }
+
+  .button {
+    padding: 20px 65px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .copyrights img {
+    width: 115px;
+  }
+
+  .copyrights p,
+  footer a {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
