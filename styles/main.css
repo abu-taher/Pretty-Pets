@@ -769,6 +769,7 @@ footer a {
   .is-howItWorks {
     width: 90%;
     display: flex;
+    justify-content: center;
   }
 
   .is-howItWorks .widget .widget__image img {
