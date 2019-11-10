@@ -186,6 +186,7 @@ header .container {
   justify-content: space-between;
 }
 
+<<<<<<< HEAD
 header .main-nav.open-nav {
   display: block;
   position: absolute;
@@ -203,11 +204,14 @@ header .main-nav.open-nav a {
   color: #191B43;
 }
 
+=======
+>>>>>>> 25cca4a457b7cc5c388515bf18d29886274cfc2d
 .is-visible-mobile {
   display: none;
 }
 
 .burger {
+<<<<<<< HEAD
   width: 30px;
   /* width: 60px; */
   /* height: 45px; */
@@ -290,11 +294,27 @@ header .main-nav.open-nav a {
   left: 0; */
   /* top: 1.25em; */
   /* top: 0;
+=======
+  position: relative;
+  padding-left: 1.25em;
+}
+
+.burger:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* top: 1.25em; */
+  top: 0;
+>>>>>>> 25cca4a457b7cc5c388515bf18d29886274cfc2d
   width: 1em;
   height: 0.15em;
   background: black;
   box-shadow: 0 0.35em 0 0 black, 0 0.7em 0 0 black;
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> 25cca4a457b7cc5c388515bf18d29886274cfc2d
 
 /*----------------------٦-----------------------*/
 /*                     HERO                     */
@@ -578,7 +598,10 @@ footer a {
     display: block;
     background: none;
     border: none;
+<<<<<<< HEAD
     outline: none;
+=======
+>>>>>>> 25cca4a457b7cc5c388515bf18d29886274cfc2d
   }
 }
 
@@ -913,4 +936,8 @@ footer a {
     font-size: 14px;
     line-height: 23px;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 25cca4a457b7cc5c388515bf18d29886274cfc2d
